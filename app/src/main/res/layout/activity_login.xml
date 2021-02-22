@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical"
+    tools:context=".credential.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:padding="1dp"
+                        android:src="@drawable/logo_genesis" />
+
+                </LinearLayout>
+
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginRight="20dp"-->
+<!--                    android:elevation="20dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    app:cardBackgroundColor="@android:color/white"-->
+<!--                    app:cardCornerRadius="14dp">-->
+<!--                    -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="14dp"
+                    app:cardMaxElevation="4.5dp"
+                    app:cardElevation="3dp"
+                    app:contentPadding="10dp"
+                    app:contentPaddingBottom="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    android:id="@+id/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="30dp"
+                        android:paddingRight="30dp"
+                        android:paddingBottom="30dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="0dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="Login Account"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            app:textAllCaps="false" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/mobile_text_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint=""
+                            app:errorEnabled="true"
+                            app:passwordToggleEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etUserId"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="30dp"
+                                android:fontFamily="@font/roboto_regular"
+                                android:hint="BMDC No"
+                                android:inputType="text"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@color/colorHint" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/password_text_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/mobile_text_input"
+                            android:hint=""
+                            app:errorEnabled="true"
+                            app:passwordToggleEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="16dp"
+
+                                android:hint="Password"
+                                android:inputType="textPassword"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="16dp"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@color/colorHint" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <TextView
+                            android:id="@+id/tvForgotPass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/btnLogin"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="left"
+                            android:text="Forgot Password?"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/btnLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/password_text_input"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="40dp"
+                            android:background="@drawable/button_rounded_angle"
+                            android:fontFamily="@font/roboto_bold"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Login"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center"
+                            android:text="Don't have an account?"
+                            android:textAllCaps="true"
+                            android:textColor="@color/grey_700"
+                            android:textSize="17sp"
+                            android:textStyle="normal"
+                            app:textAllCaps="false" />
+
+
+                        <Button
+                            android:id="@+id/btnRegister"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/btnLogin"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="40dp"
+                            android:background="@drawable/button_rounded_angle2"
+                            android:fontFamily="@font/roboto_bold"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Register"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:visibility="visible" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

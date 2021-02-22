@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="top_doctor_title_array">
+        <item>ডাঃ একেএম জিয়াউল হক</item>
+        <item>ডাঃ তালহা ইবনে আলাউদ্দিন</item>
+        <item>ডাঃ রাশেদ রিফাত</item>
+        <item>ডাঃ তাকি ইলিয়াস</item>
+        <item>ডাঃ একেএম জিয়াউল হক</item>
+    </string-array>
+
+    <string-array name="top_doctor_deg_array">
+        <item>হার্ট বিশেষজ্ঞ</item>
+        <item>কিডনি বিশেষজ্ঞ</item>
+        <item>নিউরোমেডিসিন</item>
+        <item>চক্ষু বিশেষজ্ঞ</item>
+        <item>হার্ট বিশেষজ্ঞ</item>
+    </string-array>
+
+    <string-array name="doctor_date_array">
+        <item>5 January to 20 January, 2020</item>
+        <item>22 May, 2020</item>
+        <item>25 May, 2020</item>
+        <item>26 May to 29 May, 2020</item>
+        <item>20 January, 2021</item>
+    </string-array>
+
+    <string-array name="doctor_timeslot_number_array">
+        <item>No slots available</item>
+        <item>28 slots available</item>
+        <item>18 slots available</item>
+        <item>25 slots available</item>
+        <item>28 slots available</item>
+    </string-array>
+
+    <string-array name="division_wise_doctor_array">
+    <item>জেনারেল ফিজিশিয়ান</item>
+    <item>মেডিসিন</item>
+    <item>হাড় ও জয়েন্ট</item>
+    <item>বাত, ব্যথা ও ফিজিক্যাল মেডিসিন</item>
+    <item>চর্ম ও যৌন</item>
+    <item>শিশু</item>
+    <item>প্রসূতি ও স্ত্রীরোগ</item>
+    <item>ডেন্টাল কেয়ার</item>
+    <item>নাক কান গলা</item>
+    <item>চোখের রোগ</item>
+    <item>গ্যাস্টিক ও হজমের সমস্যা</item>
+    <item>মানসিক সুস্থতা</item>
+    <item>ডায়াবেটিস ও হরমোন রোগ</item>
+    <item>মস্তিষ্ক ও স্নায়ু</item>
+    <item>কিডনি ও প্রস্রাবের সমস্যা</item>
+    <item>হৃদরোগ</item>
+    <item>ফুসফুস এবং বক্ষব্যাধি</item>
+    <item>ক্যান্সার</item>
+    <item>জেনারেল সার্জারি</item>
+    <item>ভাস্কুলার সার্জারী</item>
+    <item>কাউন্সিলিং</item>
+<!--    <item>হারবাল</item>-->
+    <item>লাইফস্টাইল ও পুস্টি</item>
+    </string-array>
+
+    <string-array name="division_wise_doctor_title_code_array">
+        <item>GP</item>
+        <item>MEDICINE</item>
+        <item>BONE</item>
+        <item>PMEDICINE</item>
+        <item>SEX</item>
+        <item>CHILD</item>
+        <item>GYNE</item>
+        <item>DENTAL</item>
+        <item>ENT</item>
+        <item>EYE</item>
+        <item>GYSTERIC</item>
+        <item>PSYCHI</item>
+        <item>DIABETES</item>
+        <item>BRAIN</item>
+        <item>KIDNEY</item>
+        <item>HEART</item>
+        <item>LUNGS</item>
+        <item>CANCER</item>
+        <item>GSURGERY</item>
+        <item>VSURGERY</item>
+        <item>COUNSELING</item>
+<!--        <item>HARBAL</item>-->
+        <item>LIFESTYLE</item>
+
+
+    </string-array>
+    <string-array name="division_wise_doctor_image_array">
+        <item>file:///android_asset/png/036-stethoscope.png</item>
+        <item>file:///android_asset/png/healthcare-and-medical.png</item>
+        <!--        <item>file:///android_asset/png/002-fever.png</item>-->
+        <!--        <item>file:///android_asset/png/022-soril-o-hare-betha.png</item>-->
+        <item>file:///android_asset/png/human.png</item>
+        <item>file:///android_asset/png/004-massage.png</item>
+        <!--        <item>file:///android_asset/png/019-dermatitis.png</item>-->
+        <item>file:///android_asset/png/010-female.png</item>
+        <item>file:///android_asset/png/020-baby.png</item>
+        <item>file:///android_asset/png/023-gyni-o-strirog.png</item>
+        <item>file:///android_asset/png/009-toothache.png</item>
+        <item>file:///android_asset/png/nak_kan_gola.png</item>
+        <item>file:///android_asset/png/011-eye.png</item>
+        <item>file:///android_asset/png/stomach.png</item>
+        <item>file:///android_asset/png/012-medical.png</item>
+        <item>file:///android_asset/png/014-glucosemeter.png</item>
+        <item>file:///android_asset/png/008-brain.png</item>
+        <item>file:///android_asset/png/015-urology.png</item>
+        <!--        <item>file:///android_asset/png/024-ayurvedic.png</item>-->
+        <item>file:///android_asset/png/heart1.png</item>
+        <item>file:///android_asset/png/005-air.png</item>
+        <item>file:///android_asset/png/024-ribbon.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/counciling.png</item>
+<!--        <item>file:///android_asset/png/024-ayurvedic.png</item>-->
+        <item>file:///android_asset/png/food.png</item>
+    </string-array>
+
+    ////////////
+
+    <string-array name="specialist_doctor_array">
+        <item>মেডিসিন</item>
+        <item>হাড় ও জয়েন্ট</item>
+        <item>বাত, ব্যথা ও ফিজিক্যাল মেডিসিন</item>
+        <item>চর্ম ও যৌন</item>
+        <item>শিশু</item>
+        <item>প্রসূতি ও স্ত্রীরোগ</item>
+        <item>ডেন্টাল কেয়ার</item>
+        <item>নাক কান গলা</item>
+        <item>চোখের রোগ</item>
+        <item>গ্যাস্টিক ও হজমের সমস্যা</item>
+        <item>মানসিক সুস্থতা</item>
+        <item>ডায়াবেটিস ও হরমোন রোগ</item>
+        <item>মস্তিষ্ক ও স্নায়ু</item>
+        <item>কিডনি ও প্রস্রাবের সমস্যা</item>
+        <item>হৃদরোগ</item>
+        <item>ফুসফুস এবং বক্ষব্যাধি</item>
+        <item>ক্যান্সার</item>
+        <item>জেনারেল সার্জারি</item>
+        <item>ভাস্কুলার সার্জারী</item>
+        <item>কাউন্সিলিং</item>
+        <item>হারবাল</item>
+        <item>লাইফস্টাইল ও পুস্টি</item>
+    </string-array>
+
+    <string-array name="specialist_doctor_title_code_array">
+        <item>MEDICINE</item>
+        <item>BONE</item>
+        <item>PMEDICINE</item>
+        <item>SEX</item>
+        <item>CHILD</item>
+        <item>GYNE</item>
+        <item>DENTAL</item>
+        <item>ENT</item>
+        <item>EYE</item>
+        <item>GYSTERIC</item>
+        <item>PSYCHI</item>
+        <item>DIABETES</item>
+        <item>BRAIN</item>
+        <item>KIDNEY</item>
+        <item>HEART</item>
+        <item>LUNGS</item>
+        <item>CANCER</item>
+        <item>GSURGERY</item>
+        <item>VSURGERY</item>
+        <item>COUNSELING</item>
+        <item>HARBAL</item>
+        <item>LIFESTYLE</item>
+    </string-array>
+
+    <string-array name="specialist_doctor_image_array">
+        <item>file:///android_asset/png/healthcare-and-medical.png</item>
+        <!--        <item>file:///android_asset/png/002-fever.png</item>-->
+        <!--        <item>file:///android_asset/png/022-soril-o-hare-betha.png</item>-->
+        <item>file:///android_asset/png/human.png</item>
+        <item>file:///android_asset/png/004-massage.png</item>
+        <!--        <item>file:///android_asset/png/019-dermatitis.png</item>-->
+        <item>file:///android_asset/png/010-female.png</item>
+        <item>file:///android_asset/png/020-baby.png</item>
+        <item>file:///android_asset/png/023-gyni-o-strirog.png</item>
+        <item>file:///android_asset/png/009-toothache.png</item>
+        <item>file:///android_asset/png/nak_kan_gola.png</item>
+        <item>file:///android_asset/png/011-eye.png</item>
+        <item>file:///android_asset/png/stomach.png</item>
+        <item>file:///android_asset/png/012-medical.png</item>
+        <item>file:///android_asset/png/014-glucosemeter.png</item>
+        <item>file:///android_asset/png/008-brain.png</item>
+        <item>file:///android_asset/png/015-urology.png</item>
+        <!--        <item>file:///android_asset/png/024-ayurvedic.png</item>-->
+        <item>file:///android_asset/png/heart1.png</item>
+        <item>file:///android_asset/png/005-air.png</item>
+        <item>file:///android_asset/png/024-ribbon.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/counciling.png</item>
+        <item>file:///android_asset/png/024-ayurvedic.png</item>
+        <item>file:///android_asset/png/food.png</item>
+    </string-array>
+
+
+    ///////////////////
+
+
+
+
+
+    ////////////
+
+    <string-array name="free_tele_doctor_array">
+        <item>জেনারেল ফিজিশিয়ান</item>
+        <item>মেডিসিন</item>
+        <item>হাড় ও জয়েন্ট</item>
+        <item>বাত, ব্যথা ও ফিজিক্যাল মেডিসিন</item>
+        <item>চর্ম ও যৌন</item>
+        <item>শিশু</item>
+        <item>প্রসূতি ও স্ত্রীরোগ</item>
+        <item>ডেন্টাল কেয়ার</item>
+        <item>নাক কান গলা</item>
+        <item>চোখের রোগ</item>
+        <item>গ্যাস্টিক ও হজমের সমস্যা</item>
+        <item>মানসিক সুস্থতা</item>
+        <item>ডায়াবেটিস ও হরমোন রোগ</item>
+        <item>মস্তিষ্ক ও স্নায়ু</item>
+        <item>কিডনি ও প্রস্রাবের সমস্যা</item>
+        <item>হৃদরোগ</item>
+        <item>ফুসফুস এবং বক্ষব্যাধি</item>
+        <item>ক্যান্সার</item>
+        <item>জেনারেল সার্জারি</item>
+        <item>ভাস্কুলার সার্জারী</item>
+        <item>কাউন্সিলিং</item>
+        <item>হারবাল</item>
+        <item>লাইফস্টাইল ও পুস্টি</item>
+    </string-array>
+
+    <string-array name="free_tele_doctor_title_code_array">
+        <item>GP</item>
+        <item>MEDICINE</item>
+        <item>BONE</item>
+        <item>PMEDICINE</item>
+        <item>SEX</item>
+        <item>CHILD</item>
+        <item>GYNE</item>
+        <item>DENTAL</item>
+        <item>ENT</item>
+        <item>EYE</item>
+        <item>GYSTERIC</item>
+        <item>PSYCHI</item>
+        <item>DIABETES</item>
+        <item>BRAIN</item>
+        <item>KIDNEY</item>
+        <item>HEART</item>
+        <item>LUNGS</item>
+        <item>CANCER</item>
+        <item>GSURGERY</item>
+        <item>VSURGERY</item>
+        <item>COUNSELING</item>
+        <item>HARBAL</item>
+        <item>LIFESTYLE</item>
+    </string-array>
+
+    <string-array name="free_tele_doctor_image_array">
+        <item>file:///android_asset/png/036-stethoscope.png</item>
+        <item>file:///android_asset/png/healthcare-and-medical.png</item>
+        <!--        <item>file:///android_asset/png/002-fever.png</item>-->
+        <!--        <item>file:///android_asset/png/022-soril-o-hare-betha.png</item>-->
+        <item>file:///android_asset/png/human.png</item>
+        <item>file:///android_asset/png/004-massage.png</item>
+        <!--        <item>file:///android_asset/png/019-dermatitis.png</item>-->
+        <item>file:///android_asset/png/010-female.png</item>
+        <item>file:///android_asset/png/020-baby.png</item>
+        <item>file:///android_asset/png/023-gyni-o-strirog.png</item>
+        <item>file:///android_asset/png/009-toothache.png</item>
+        <item>file:///android_asset/png/nak_kan_gola.png</item>
+        <item>file:///android_asset/png/011-eye.png</item>
+        <item>file:///android_asset/png/stomach.png</item>
+        <item>file:///android_asset/png/012-medical.png</item>
+        <item>file:///android_asset/png/014-glucosemeter.png</item>
+        <item>file:///android_asset/png/008-brain.png</item>
+        <item>file:///android_asset/png/015-urology.png</item>
+        <!--        <item>file:///android_asset/png/024-ayurvedic.png</item>-->
+        <item>file:///android_asset/png/heart1.png</item>
+        <item>file:///android_asset/png/005-air.png</item>
+        <item>file:///android_asset/png/024-ribbon.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/016-doctor.png</item>
+        <item>file:///android_asset/png/counciling.png</item>
+        <item>file:///android_asset/png/024-ayurvedic.png</item>
+        <item>file:///android_asset/png/food.png</item>
+    </string-array>
+
+
+    ///////////////////
+
+
+
+
+
+
+
+
+
+
+<!--    <string-array name="specialist_doctor_array">-->
+<!--        <item>ডাঃ একেএম জিয়াউল হক</item>-->
+<!--        <item>ডাঃ তালহা ইবনে আলাউদ্দিন</item>-->
+<!--        <item>ডাঃ রাশেদ রিফাত</item>-->
+<!--        <item>ডাঃ তাকি ইলিয়াস</item>-->
+<!--        <item>ডাঃ একেএম জিয়াউল হক</item>-->
+<!--        <item>ডাঃ একেএম জিয়াউল হক</item>-->
+<!--        <item>ডাঃ তালহা ইবনে আলাউদ্দিন</item>-->
+<!--        <item>ডাঃ রাশেদ রিফাত</item>-->
+<!--        <item>ডাঃ তাকি ইলিয়াস</item>-->
+<!--        <item>ডাঃ একেএম জিয়াউল হক</item>-->
+<!--    </string-array>-->
+
+
+    <string-array name="specialist_doctor_deg_array">
+        <item>হার্ট বিশেষজ্ঞ</item>
+        <item>কিডনি বিশেষজ্ঞ</item>
+        <item>নিউরোমেডিসিন</item>
+        <item>চক্ষু বিশেষজ্ঞ</item>
+        <item>হার্ট বিশেষজ্ঞ</item>
+        <item>হার্ট বিশেষজ্ঞ</item>
+        <item>কিডনি বিশেষজ্ঞ</item>
+        <item>নিউরোমেডিসিন</item>
+        <item>চক্ষু বিশেষজ্ঞ</item>
+        <item>হার্ট বিশেষজ্ঞ</item>
+    </string-array>
+
+
+    <string-array name="specialist_doctor_degree_array">
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS,MD</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS,MD</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS</item>
+        <item>MBBS,FCPS,Urologist</item>
+    </string-array>
+
+
+    <string-array name="specialist_doctor_experience_array">
+        <item>6 years experience overall</item>
+        <item>8 years experience overall</item>
+        <item>2 years experience overall</item>
+        <item>5 years experience overall</item>
+        <item>9 years experience overall</item>
+        <item>3 years experience overall,MD</item>
+        <item>1 year experience overall</item>
+        <item>10 years experience overall</item>
+        <item>7 years experience overall</item>
+        <item>4 years experience overall</item>
+    </string-array>
+
+
+    <string-array name="specialist_doctor_availability_array">
+        <item>available</item>
+        <item>available</item>
+        <item>২০ মিনিট পর অনলাইনে আসবেন</item>
+        <item>২৫ মিনিট পর অনলাইনে আসবেন</item>
+        <item>২৫ মিনিট পর অনলাইনে আসবেন</item>
+        <item>৩০ মিনিট পর অনলাইনে আসবেন</item>
+        <item>৫০ মিনিট পর অনলাইনে আসবেন</item>
+        <item>১ ঘণ্টা ২০ মিনিট পর অনলাইনে আসবেন</item>
+        <item>২ ঘণ্টা ৩০ মিনিট পর অনলাইনে আসবেন</item>
+        <item>৪ ঘণ্টা ৫০ মিনিট পর অনলাইনে আসবেন</item>
+    </string-array>
+
+    <string-array name="morning_time_slot_array">
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
+    </string-array>
+    <string-array name="morning_time_slot_array2">
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+        <item>AM</item>
+    </string-array>
+
+    <string-array name="afternoon_time_slot_array">
+        <item>12:00</item>
+        <item>12:30</item>
+        <item>01:00</item>
+        <item>01:30</item>
+        <item>02:00</item>
+        <item>02:30</item>
+        <item>03:00</item>
+        <item>03:30</item>
+    </string-array>
+    <string-array name="afternoon_time_slot_array2">
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+    </string-array>
+
+    <string-array name="evening_time_slot_array">
+        <item>04:00</item>
+        <item>04:30</item>
+        <item>05:00</item>
+        <item>05:30</item>
+        <item>06:00</item>
+        <item>06:30</item>
+        <item>07:00</item>
+        <item>07:30</item>
+    </string-array>
+    <string-array name="evening_time_slot_array2">
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+        <item>PM</item>
+    </string-array>
+
+
+    <string-array name="prescription_data1_array">
+        <item>08</item>
+        <item>25</item>
+    </string-array>
+
+    <string-array name="prescription_data2_array">
+        <item>Recoed for Talha</item>
+        <item>Recoed for brother</item>
+    </string-array>
+
+    <string-array name="prescription_data3_array">
+        <item>3 Reports</item>
+        <item>1 Prescription</item>
+    </string-array>
+
+    <string-array name="help_center_array1">
+        <item>ডাক্তার উত্তর দিচ্ছে না</item>
+        <item>প্রশ্ন করা যাচ্ছে না</item>
+        <item>অসঠিক বিশেষজ্ঞতা</item>
+        <item>প্রেস্ক্রিপ্সন সম্পর্কিত ইস্যু</item>
+        <item>ডাক্তার সম্পর্কিত ইস্যু</item>
+        <item>রিফান্ড স্ট্যাটাস</item>
+        <item>...</item>
+    </string-array>
+
+    <string-array name="help_center_array2">
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+        <item>file:///android_asset/png/help_center/1.png</item>
+    </string-array>
+
+
+    <string-array name="article_title_array">
+        <item>ভাইরাস সম্পর্কে কি কি জানতে হবে</item>
+        <item>সন্দেহ বা আক্রান্ত হলে</item>
+        <item>ভাইরাস সম্পর্কে কি কি জানতে হবে</item>
+        <item>সন্দেহ বা আক্রান্ত হলে</item>
+        <item>ভাইরাস সম্পর্কে কি কি জানতে হবে</item>
+        <item>সন্দেহ বা আক্রান্ত হলে</item>
+    </string-array>
+
+    <string-array name="article_image_array">
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+        <item>file:///android_asset/jpg/article/3.jpg</item>
+    </string-array>
+
+
+</resources>

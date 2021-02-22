@@ -1,0 +1,144 @@
+{
+  "question_list": [
+    {
+      "question_id": "27",
+      "question_type": "1",
+      "correct_ans_sba": "",
+      "question_title": "High risk for thrombosis; ",
+      "question_option": [
+        {
+          "option_title": "a) OCP",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "b) Sickle cell anemia ",
+          "correct_ans": "T"
+        },
+        {
+          "option_title": "c) Cardiomyopathy",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "d) Smoking",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "e) Antiphospholioid antibody syndrome",
+          "correct_ans": "T"
+        }
+      ]
+    },
+    {
+      "question_id": "235",
+      "question_type": "2",
+      "correct_ans_sba": "A",
+      "question_title": "In human cytogenetic ",
+      "question_option": [
+        {
+          "option_title": "a) The Y chromosome is acrocentric",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "b) Trisomy 16 is the commonest trisomy",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "c) Trisomy 1 is present in almost 10% of first trimester spontaneous abortions",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "d) A cause of trisomy is non disjunction at meiosis",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "e) Pentasomy of sex chromosome is incompatible with life",
+          "correct_ans": ""
+        }
+      ]
+    },
+    {
+      "question_id": "283",
+      "question_type": "1",
+      "correct_ans_sba": "",
+      "question_title": "Characteristic of reversible cell injury are",
+      "question_option": [
+        {
+          "option_title": "a) Detachment of ribosome",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "b) Protein synthesis",
+          "correct_ans": "T"
+        } ,
+        {
+          "option_title": "c) Na+ Pump",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "d) Anaerobic glycolysis",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "e) Clumping of nuclear chromatin",
+          "correct_ans": "T"
+        }
+      ]
+    },
+    {
+      "question_id": "292",
+      "question_type": "2",
+      "correct_ans_sba": "D",
+      "question_title": "Autosomal pominant disorder ",
+      "question_option": [
+        {
+          "option_title": "a) Retinitis pigmentosa",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "b) Wilson disease",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "c) Vit-D resistant Rickets",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "d) Icthyosis",
+          "correct_ans": ""
+        },
+        {
+          "option_title": "e) Tuberous selerosis",
+          "correct_ans": ""
+        }
+      ]
+    },
+    {
+      "question_id": "16913",
+      "question_type": "1",
+      "correct_ans_sba": "",
+      "question_title": "Chromaffin system include following cells-",
+      "question_option": [
+        {
+          "option_title": "a) Adrenal medulla",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "b) Paraganglia",
+          "correct_ans": "T"
+        },
+        {
+          "option_title": "c) Para-aortic bodies",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "d) Pre-aortic bodies",
+          "correct_ans": "F"
+        },
+        {
+          "option_title": "e) Sacral bodies",
+          "correct_ans": "T"
+        }
+      ]
+    }
+  ]
+}
