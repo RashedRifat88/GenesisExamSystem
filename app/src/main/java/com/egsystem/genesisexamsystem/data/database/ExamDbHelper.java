@@ -339,6 +339,35 @@ public class ExamDbHelper extends SQLiteOpenHelper {
     }
 
 
+    public ArrayList<Answer> getUnansweredAnswers() {
+        ArrayList<Answer> answerList = new ArrayList<>();
+        db = getReadableDatabase();
+//        rawQuery("SELECT id, name FROM people WHERE name = ? AND id = ?", new String[] {"David", "2"});
+        Cursor c = db.rawQuery("SELECT * FROM " + AnswersTable.TABLE_ANSWERS +
+                " WHERE correct_ans_sba = ? AND correct_ans_a = ? AND correct_ans_b = ? AND correct_ans_c = ? AND correct_ans_d = ? AND correct_ans_e = ?", new String[]{"", "", "", "", "", ""});
+        if (c.moveToFirst()) {
+            do {
+                Answer answer = new Answer();
+                answer.setId(c.getInt(c.getColumnIndex(AnswersTable._ID)));
+                answer.setQuestionId(c.getString(c.getColumnIndex(AnswersTable.COLUMN_QUESTION_ID)));
+                answer.setQuestionSl(c.getString(c.getColumnIndex(AnswersTable.COLUMN_QUESTION_SL)));
+                answer.setQuestionType(c.getString(c.getColumnIndex(AnswersTable.COLUMN_QUESTION_TYPE)));
+                answer.setCorrect_ans_sba(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_SBA)));
+                answer.setCorrect_ans_a(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_A)));
+                answer.setCorrect_ans_b(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_B)));
+                answer.setCorrect_ans_c(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_C)));
+                answer.setCorrect_ans_d(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_D)));
+                answer.setCorrect_ans_e(c.getString(c.getColumnIndex(AnswersTable.CORRECT_ANS_E)));
+                answer.setSkipped(c.getString(c.getColumnIndex(AnswersTable.SKIPPED)));
+                answer.setNot_answered(c.getString(c.getColumnIndex(AnswersTable.NOT_ANSWERED)));
+                answerList.add(answer);
+            } while (c.moveToNext());
+        }
+        c.close();
+        return answerList;
+    }
+
+
     public ArrayList<Answer> getAllSkippedQuestionsAnswers() {
         ArrayList<Answer> answerList = new ArrayList<>();
         db = getReadableDatabase();

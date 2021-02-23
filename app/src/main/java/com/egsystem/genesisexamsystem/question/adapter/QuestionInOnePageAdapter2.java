@@ -20,6 +20,7 @@ import com.egsystem.genesisexamsystem.R;
 import com.egsystem.genesisexamsystem.data.database.ExamDbHelper;
 import com.egsystem.genesisexamsystem.data.model.Answer;
 import com.egsystem.genesisexamsystem.data.model.Question;
+import com.egsystem.genesisexamsystem.question.QuestionInOnePageActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -408,26 +409,11 @@ public class QuestionInOnePageAdapter2 extends RecyclerView.Adapter<QuestionInOn
                 String skipped = "";
                 String not_answered = "";
 
-//                answerList = dbHelper.getAllGivenAnswers();
-//                String correct_ans_sba_from_ans = answerList.get(position).getCorrect_ans_sba();
-//                String correct_ans_a_from_ans = answerList.get(position).getCorrect_ans_a();
-//                String correct_ans_b_from_ans = answerList.get(position).getCorrect_ans_b();
-//                String correct_ans_c_from_ans = answerList.get(position).getCorrect_ans_c();
-//                String correct_ans_d_from_ans = answerList.get(position).getCorrect_ans_d();
-//                String correct_ans_e_from_ans = answerList.get(position).getCorrect_ans_e();
-//
-//                if (correct_ans_sba_from_ans.isEmpty() && correct_ans_a_from_ans.isEmpty() && correct_ans_b_from_ans.isEmpty() &&
-//                        correct_ans_c_from_ans.isEmpty() && correct_ans_d_from_ans.isEmpty() && correct_ans_e_from_ans.isEmpty()) {
-//
-//                    dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
-//                } else {
-//
-//                }
-
                 dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
 
 
                 tv_save.setText("SAVED");
+                tv_save.setPadding(50,0,50, 0);
 
                 correct_ans_sba = "";
 
@@ -471,6 +457,8 @@ public class QuestionInOnePageAdapter2 extends RecyclerView.Adapter<QuestionInOn
 
                 tv_save.setBackgroundResource(R.drawable.rounded_corner2);
 
+                QuestionInOnePageActivity.loadAnswerList();
+
             }
         });
 
@@ -480,6 +468,7 @@ public class QuestionInOnePageAdapter2 extends RecyclerView.Adapter<QuestionInOn
                 tv_save.setText("Save");
 
                 tv_save.setBackgroundResource(R.drawable.rounded_corner3);
+                tv_save.setPadding(50,0,50, 0);
 
 
                 radio_a_1.setEnabled(true);
