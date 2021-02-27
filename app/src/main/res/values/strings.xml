@@ -3,6 +3,7 @@
     <string name="title_course">Course</string>
     <string name="title_exam">Exam</string>
     <string name="title_question">Question</string>
+    <string name="title_question_option">Question Options</string>
     <string name="title_activity_home">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

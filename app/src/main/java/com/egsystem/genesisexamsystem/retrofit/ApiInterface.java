@@ -1,19 +1,15 @@
 package com.egsystem.genesisexamsystem.retrofit;
 
 
+import com.egsystem.genesisexamsystem.model.DoctorCourseModel;
+import com.egsystem.genesisexamsystem.model.DoctorExamListModel;
 import com.egsystem.genesisexamsystem.model.LoginModel;
 import com.egsystem.genesisexamsystem.model.MedicalCollegeModel;
 import com.egsystem.genesisexamsystem.model.RegisterModel;
 import com.google.gson.JsonObject;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.reactivex.Observable;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -28,7 +24,6 @@ import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface ApiInterface {
-
 
 
     @FormUrlEncoded
@@ -52,11 +47,21 @@ public interface ApiInterface {
     );
 
 
-
     @GET(Api.medical_colleges)
     Observable<Response<MedicalCollegeModel>> medical_colleges(@Header("Accept") String accept);
 
 
+    @GET(Api.doctor_exam_courses)
+    Observable<Response<DoctorCourseModel>> getDoctorCourses(
+            @Header("Authorization") String authorization,
+            @Header("Accept") String accept
+    );
+
+
+    @GET()
+    Observable<Response<DoctorExamListModel>> getExamList(@Url String urlString,
+                                                          @Header("authorization") String authorization,
+                                                          @Header("Accept") String accept);
 
 
 //    @Headers("Content-Type: multipart/form-data")

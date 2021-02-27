@@ -18,7 +18,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.egsystem.genesisexamsystem.R;
+import com.egsystem.genesisexamsystem.Result.ResultActivity;
 import com.egsystem.genesisexamsystem.exam.ExamActivity;
+import com.egsystem.genesisexamsystem.model.DoctorExamListModel;
 import com.egsystem.genesisexamsystem.question.PreeQuestionActivity;
 import com.egsystem.genesisexamsystem.question.QuestionActivity;
 
@@ -28,7 +30,7 @@ import java.util.List;
 
 public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder> {
 
-    private List<String> dataSet = new ArrayList<>();
+    private List<DoctorExamListModel.Exam> dataSet = new ArrayList<>();
     private List<String> dataSet2 = new ArrayList<>();
     private List<String> dataSet3 = new ArrayList<>();
     private List<String> title_code_list = new ArrayList<>();
@@ -60,10 +62,9 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
         this.category_id = categoryId;
     }
 
-    public void setData2(List<String> dataSet2, List<String> dataSet3, List<String> title_code_list) {
-        this.dataSet2 = dataSet2;
-        this.dataSet3 = dataSet3;
-        this.title_code_list = title_code_list;
+
+    public void setData(List<DoctorExamListModel.Exam> dataSet) {
+        this.dataSet = dataSet;
         Log.d("tagResponse", " dataSet2: " + dataSet2);
     }
 
@@ -71,7 +72,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 
     @Override
     public int getItemCount() {
-        return dataSet2.size();
+        return dataSet.size();
     }
 
 
@@ -100,9 +101,13 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
     @Override
     public void onBindViewHolder(final ExamAdapter.ExamViewHolder holder, int position) {
         TextView tv_sl_no = holder.tv_sl_no;
-//        TextView tv_doctor_name_name = holder.tv_doctor_name_name;
-//        TextView tv_remove_item = holder.tv_remove_item;
-//        TextView tv_doctor_designation = holder.tv_doctor_designation;
+        TextView tv_exam_type = holder.tv_exam_type;
+        TextView tv_duration = holder.tv_duration;
+        TextView tv_total_mark = holder.tv_total_mark;
+        TextView tv_mcq_mark = holder.tv_mcq_mark;
+        TextView tv_sba_mark = holder.tv_sba_mark;
+        TextView tv_neg_mark_mcq = holder.tv_neg_mark_mcq;
+        TextView tv_neg_mark_sba = holder.tv_neg_mark_sba;
         LinearLayout linear_result_ans = holder.linear_result_ans;
         LinearLayout linear_start_exam = holder.linear_start_exam;
 //        ImageView imageView = holder.imageView;
@@ -111,10 +116,8 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 //        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
 //        cardview1.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fall_down_animation));
 
-        String doctorInfo = dataSet2.get(position);
-        String doctorInfo3 = dataSet3.get(position);
-        String title_code = title_code_list.get(position);
-
+        DoctorExamListModel.Exam doctor_exam = dataSet.get(position);
+        Log.d("tag333", " doctor_exam...: " + doctor_exam);
 
         int aPosition = position + 1;
 
@@ -144,27 +147,44 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 
             }
 
-        Log.d("tag333", " dataSet2...: " + dataSet2);
 
         Log.d("tag333", " position...: " + position);
         Log.d("tag333", " mProductList...: " + mProductList);
 
         tv_sl_no.setText(String.valueOf(aPosition));
 
-//        tv_doctor_name_name.setText(doctorInfo);
-//
-//
-//        Glide.with(context).load(doctorInfo3).into(imageView);
+//        tv_exam_type.setText(doctor_exam);
 
-        cardview1.setOnClickListener(new View.OnClickListener() {
+        int duration_exam = doctor_exam.getDuration();
+        int duration_exam_in_minutes = duration_exam/60;
+
+        tv_duration.setText(String.valueOf(duration_exam_in_minutes));
+        tv_total_mark.setText(doctor_exam.getFullMark().toString());
+        tv_mcq_mark.setText(doctor_exam.getMcqMark().toString());
+        tv_sba_mark.setText(doctor_exam.getSbaMark().toString());
+        tv_neg_mark_mcq.setText(doctor_exam.getMcqNegativeMark().toString());
+        tv_neg_mark_sba.setText(doctor_exam.getSbaNegativeMark().toString());
+
+//        Glide.with(context).load(doctor_exam3).into(imageView);
+
+        linear_start_exam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, PreeQuestionActivity.class);
-                intent.putExtra("title", doctorInfo);
-                intent.putExtra("title_code", title_code);
+//                intent.putExtra("title", doctor_exam);
                 context.startActivity(intent);
             }
         });
+
+
+//        linear_result_ans.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, ResultActivity.class);
+////                intent.putExtra("title", doctor_exam);
+//                context.startActivity(intent);
+//            }
+//        });
 
 
     }
@@ -175,10 +195,14 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
     class ExamViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_sl_no;
-        TextView tv_doctor_name_name;
-        TextView tv_remove_item;
-        TextView tv_doctor_designation;
-        LinearLayout linear1;
+        TextView tv_exam_type;
+        TextView tv_duration;
+        TextView tv_total_mark;
+        TextView tv_mcq_mark;
+        TextView tv_sba_mark;
+        TextView tv_neg_mark_mcq;
+        TextView tv_neg_mark_sba;
+
         LinearLayout linear_result_ans;
         LinearLayout linear_start_exam;
 
@@ -188,7 +212,14 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
         public ExamViewHolder(View itemView) {
             super(itemView);
             tv_sl_no = itemView.findViewById(R.id.tv_sl_no);
-//            tv_doctor_designation = itemView.findViewById(R.id.tv_doctor_designation);
+            tv_exam_type = itemView.findViewById(R.id.tv_exam_type);
+            tv_duration = itemView.findViewById(R.id.tv_duration);
+            tv_total_mark = itemView.findViewById(R.id.tv_total_mark);
+            tv_mcq_mark = itemView.findViewById(R.id.tv_mcq_mark);
+            tv_sba_mark = itemView.findViewById(R.id.tv_sba_mark);
+            tv_neg_mark_mcq = itemView.findViewById(R.id.tv_neg_mark_mcq);
+            tv_neg_mark_sba = itemView.findViewById(R.id.tv_neg_mark_sba);
+
 //            imageView = itemView.findViewById(R.id.imageView);
             cardview1 = itemView.findViewById(R.id.cardview1);
 
@@ -198,55 +229,6 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
         }
     }
 
-
-
-
-
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-    public void filter(CharSequence charText) {
-
-        List<String> filteredList = new ArrayList<>();
-        String charString = charText.toString();
-
-        if (charString.length() == 0) {
-////         memberListFiltered = dataSet;
-//         filteredList.addAll(dataSet);
-            Log.i("tag", String.valueOf("1:  "+charString.length())+dataSet);
-
-
-        }
-
-        if (charString.isEmpty() || charString.equalsIgnoreCase("")) {
-            memberListFiltered = dataSet2;
-        } else {
-//         List<MemberInfoModel.Result> filteredList = new ArrayList<>();
-            for (String row : dataSet2) {
-                if (
-                        row.toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getMobile().toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getYear().toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getMember_id_String().toLowerCase().contains(charString.toLowerCase())
-//                             ||
-//                             row.getTakaAmount().toLowerCase().contains(charString.toLowerCase()) ||
-//                             row.getPaymentStatus().toLowerCase().contains(charString.toLowerCase())
-                ) {
-                    filteredList.add(row);
-                }
-            }
-
-            Log.i("tag", "2:  "+String.valueOf(charString.length())+filteredList);
-
-            memberListFiltered = filteredList;
-        }
-
-//     Filter.FilterResults filterResults = new Filter.FilterResults();
-//     filterResults.values = memberListFiltered;
-        this.setData2(memberListFiltered, memberListFiltered, memberListFiltered);
-        this.notifyDataSetChanged();
-    }
 
 
 

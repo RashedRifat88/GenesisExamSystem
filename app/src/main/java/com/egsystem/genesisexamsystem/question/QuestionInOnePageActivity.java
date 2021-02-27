@@ -1,15 +1,16 @@
 package com.egsystem.genesisexamsystem.question;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,13 +19,12 @@ import android.widget.TextView;
 
 import com.egsystem.genesisexamsystem.R;
 import com.egsystem.genesisexamsystem.Result.ResultActivity;
-import com.egsystem.genesisexamsystem.answer.CorrectAnswerAdapter;
 import com.egsystem.genesisexamsystem.data.database.ExamDbHelper;
 import com.egsystem.genesisexamsystem.data.model.Answer;
 import com.egsystem.genesisexamsystem.data.model.Question;
-import com.egsystem.genesisexamsystem.question.adapter.QuestionInOnePageAdapter;
 import com.egsystem.genesisexamsystem.question.adapter.QuestionInOnePageAdapter2;
 import com.egsystem.genesisexamsystem.question.adapter.UnAnsweredAnsAdapter;
+import com.egsystem.genesisexamsystem.utils.LinearLayoutManagerWithSmoothScroller;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,8 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
     private static TextView tv_number_of_unanswered_ques;
     private LinearLayout linear_unanswered_ques;
     static AlertDialog alertDialogQuestion;
-    static RecyclerView.LayoutManager mLayoutManager;
+    static RecyclerView.LayoutManager  mLayoutManager;
+    static RecyclerView.SmoothScroller smoothScroller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,11 +124,57 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
     }
 
 
-    public static void scrollSpecificPosition(int position) {
+    public static void scrollSpecificPosition(int position, int size) {
+
+        final int[] positionM = {position-1};
+
         alertDialogQuestion.dismiss();
-        recyclerView.scrollToPosition(position-1);
-//        recyclerView.smoothScrollToPosition(position);
-        mLayoutManager.scrollToPosition(position-1);
+
+//        recyclerView.scrollToPosition(position);
+//        recyclerView.requestFocus();
+
+        recyclerView.smoothScrollToPosition(position);
+
+
+
+
+//        recyclerView.smoothScrollToPosition(position-1);
+//        recyclerView.requestFocus();
+        Log.d("tagResponse3333", " position: " + position);
+
+//        mLayoutManager.scrollToPosition(position-1);
+//        recyclerView.requestFocus();
+
+
+//        mLayoutManager.scrollToPositionWithOffset(index, top);
+
+
+
+//        if (mLayoutManager instanceof LinearLayoutManager) {
+//            // Scroll to item and make it the first visible item of the list.
+//            ((LinearLayoutManager) mLayoutManager).scrollToPositionWithOffset(position, 0);
+//        } else {
+//            recyclerView.smoothScrollToPosition(position);
+//        }
+
+
+//        recyclerView.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                recyclerView.scrollToPosition(questionInOnePageAdapter2.getItemCount() - 1);
+//                // Here adapter.getItemCount()== child count
+//            }
+//        });
+
+//        recyclerView.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+////                recyclerView.scrollToPosition(questionInOnePageAdapter2.getItemCount() - 1);
+//                recyclerView.smoothScrollToPosition(1);
+//                // Here adapter.getItemCount()== child count
+//            }
+//        }, 1000);
+
     }
 
 
@@ -156,9 +203,13 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
         recyclerView.setAdapter(questionInOnePageAdapter2);
 //        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         mLayoutManager = new GridLayoutManager(this, 1);
+//        mLayoutManager = new SnappingLinearLayoutManager(this, 1, false);
+//        recyclerView.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(this));
         recyclerView.setLayoutManager(mLayoutManager);
         questionInOnePageAdapter2.setData2(questionList);
         questionInOnePageAdapter2.notifyDataSetChanged();
+
+
     }
 
 

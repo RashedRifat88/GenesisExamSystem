@@ -31,31 +31,50 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="220dp">
+                    android:layout_height="240dp">
 
                     <ImageView
                         android:id="@+id/image"
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/new_admission_bg" />
 
-                    <TextView
-                        android:id="@+id/title"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/image"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="10dp"
-                        android:text="All Questions\nin single page"
-                        android:textColor="#262626"
-                        android:textSize="20sp" />
+                        android:layout_marginRight="4dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/image"
+                            android:gravity="center"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="All"
+                            android:textColor="#5D655D"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="questions in single page"
+                            android:textColor="#262626"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -74,33 +93,63 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="220dp">
+                    android:layout_height="240dp">
 
                     <ImageView
                         android:id="@+id/image2"
                         android:layout_width="match_parent"
-                        android:layout_height="130dp"
+                        android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/new_admission_bg" />
 
-                    <TextView
-                        android:id="@+id/title2"
-                        android:layout_width="wrap_content"
+<!--                    <TextView-->
+<!--                        android:id="@+id/title2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/image2"-->
+<!--                        android:layout_marginLeft="4dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginRight="4dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="Single Question\nin single page"-->
+<!--                        android:textColor="#262626"-->
+<!--                        android:textSize="18sp" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/image2"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginLeft="4dp"
                         android:layout_marginTop="10dp"
-                        android:text="Single Question\nin single page"
-                        android:textColor="#262626"
-                        android:textSize="20sp" />
+                        android:layout_marginRight="4dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/image"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="Single"
+                            android:textColor="#5D655D"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:id="@+id/title2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="questions in single page"
+                            android:textColor="#262626"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
-
-
 
 
         <!--        <androidx.cardview.widget.CardView-->

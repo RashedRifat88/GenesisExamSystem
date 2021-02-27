@@ -1,10 +1,12 @@
 package com.egsystem.genesisexamsystem.question;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.egsystem.genesisexamsystem.R;
@@ -23,9 +25,22 @@ public class PreeQuestionActivity extends AppCompatActivity {
 
         dbHelper = ExamDbHelper.getInstance(this);
         initComponent();
+        initToolbar();
 
 
     }
+
+
+    private void initToolbar() {
+        ActionBar ab = ((AppCompatActivity) this).getSupportActionBar();
+        if (ab != null) {
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+        String title = this.getResources().getString(R.string.title_question_option);
+        ab.setTitle(title);
+
+    }
+
 
     private void initComponent() {
 
@@ -53,5 +68,24 @@ public class PreeQuestionActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case android.R.id.home:
+                if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getSupportFragmentManager().popBackStack();
+                } else {
+                    onBackPressed();
+                }
+//                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

@@ -10,5 +10,7 @@ public class Api {
     public static final String user_login = "doctor/login";
     public static final String user_registration = "doctor/registration";
     public static final String medical_colleges = "doctor/medical-collages";
+    public static final String doctor_exam_courses = "doctor/exam-courses";
+    public static final String doctor_exam_list = "doctor/exams/";
 
 }

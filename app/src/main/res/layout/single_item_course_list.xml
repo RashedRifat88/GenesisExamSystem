@@ -39,6 +39,8 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_title1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
@@ -47,6 +49,7 @@
                         android:textSize="19dp" />
 
                     <TextView
+                        android:id="@+id/tv_title2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
@@ -87,6 +90,7 @@
                             android:textSize="18dp" />
 
                         <TextView
+                            android:id="@+id/tv_session"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -120,6 +124,7 @@
                             android:textSize="18dp" />
 
                         <TextView
+                            android:id="@+id/tv_course"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -153,6 +158,7 @@
                             android:textSize="18dp" />
 
                         <TextView
+                            android:id="@+id/tv_discipline"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -198,6 +204,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_reg_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -227,6 +234,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_year"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"

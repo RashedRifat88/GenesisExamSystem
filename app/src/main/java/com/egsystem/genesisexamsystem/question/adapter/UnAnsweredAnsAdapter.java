@@ -86,7 +86,7 @@ public class UnAnsweredAnsAdapter extends RecyclerView.Adapter<UnAnsweredAnsAdap
         tv_ans_no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                QuestionInOnePageActivity.scrollSpecificPosition(Integer.parseInt(answer.getQuestionSl()));
+                QuestionInOnePageActivity.scrollSpecificPosition(Integer.parseInt(answer.getQuestionSl()), answerList.size());
             }
         });
 

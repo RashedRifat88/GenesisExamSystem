@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.egsystem.genesisexamsystem.R;
 import com.egsystem.genesisexamsystem.exam.ExamActivity;
+import com.egsystem.genesisexamsystem.model.DoctorCourseModel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
-    private List<String> dataSet = new ArrayList<>();
+    private List<DoctorCourseModel.DoctorCourse> dataSet = new ArrayList<>();
     private List<String> dataSet2 = new ArrayList<>();
     private List<String> dataSet3 = new ArrayList<>();
     private List<String> title_code_list = new ArrayList<>();
@@ -60,10 +61,17 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         this.category_id = categoryId;
     }
 
-    public void setData2(List<String> dataSet2, List<String> dataSet3, List<String> title_code_list) {
-        this.dataSet2 = dataSet2;
-        this.dataSet3 = dataSet3;
-        this.title_code_list = title_code_list;
+//    public void setData2(List<String> dataSet2, List<String> dataSet3, List<String> title_code_list) {
+//        this.dataSet2 = dataSet2;
+//        this.dataSet3 = dataSet3;
+//        this.title_code_list = title_code_list;
+//        Log.d("tagResponse", " dataSet2: " + dataSet2);
+//    }
+
+
+
+    public void setData(List<DoctorCourseModel.DoctorCourse> dataSet) {
+        this.dataSet = dataSet;
         Log.d("tagResponse", " dataSet2: " + dataSet2);
     }
 
@@ -71,7 +79,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     @Override
     public int getItemCount() {
-        return dataSet2.size();
+        return dataSet.size();
     }
 
 
@@ -100,9 +108,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     @Override
     public void onBindViewHolder(final CourseAdapter.CourseViewHolder holder, int position) {
 //        TextView txtSlNo = holder.txtSlNo;
-//        TextView tv_doctor_name_name = holder.tv_doctor_name_name;
-//        TextView tv_remove_item = holder.tv_remove_item;
-//        TextView tv_doctor_designation = holder.tv_doctor_designation;
+        TextView tv_title1 = holder.tv_title1;
+        TextView tv_title2 = holder.tv_title2;
+        TextView tv_session = holder.tv_session;
+        TextView tv_course = holder.tv_course;
+        TextView tv_discipline = holder.tv_discipline;
+        TextView tv_reg_num = holder.tv_reg_num;
+        TextView tv_year = holder.tv_year;
+
 //        LinearLayout linear1 = holder.linear1;
 //        ImageView imageView = holder.imageView;
         CardView cardview1 = holder.cardview1;
@@ -110,9 +123,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 //        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fade_transition_animation));
 //        cardview1.setAnimation(AnimationUtils.loadAnimation(context, R.anim.fall_down_animation));
 
-        String doctorInfo = dataSet2.get(position);
-        String doctorInfo3 = dataSet3.get(position);
-        String title_code = title_code_list.get(position);
+//        String doctorInfo = dataSet2.get(position);
+//        String doctorInfo3 = dataSet3.get(position);
+//        String title_code = title_code_list.get(position);
+
+        DoctorCourseModel.DoctorCourse courseModel = dataSet.get(position);
+        Log.d("tagResponse", " courseModel: " + courseModel);
+
 
 
         int aPosition = position + 1;
@@ -130,17 +147,23 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         Log.d("tag333", " position...: " + position);
         Log.d("tag333", " mProductList...: " + mProductList);
 
-//        tv_doctor_name_name.setText(doctorInfo);
-//
-//
+//        tv_title1.setText(doctorInfo);
+        tv_title2.setText(courseModel.getCourseName());
+        tv_session.setText(courseModel.getSession());
+        tv_course.setText(courseModel.getCourseName());
+        tv_discipline.setText(courseModel.getBatchName());
+        tv_reg_num.setText(courseModel.getRegNo());
+        tv_year.setText(String.valueOf(courseModel.getYear()));
+
+        String course_id = String.valueOf(courseModel.getId());
+
 //        Glide.with(context).load(doctorInfo3).into(imageView);
 
         cardview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ExamActivity.class);
-                intent.putExtra("title", doctorInfo);
-                intent.putExtra("title_code", title_code);
+                intent.putExtra("course_id", course_id);
                 context.startActivity(intent);
             }
         });
@@ -154,9 +177,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     class CourseViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtSlNo;
-        TextView tv_doctor_name_name;
-        TextView tv_remove_item;
-        TextView tv_doctor_designation;
+        TextView tv_title1;
+        TextView tv_title2;
+        TextView tv_session;
+        TextView tv_course;
+        TextView tv_discipline;
+        TextView tv_reg_num;
+        TextView tv_year;
         LinearLayout linear1;
 
         ImageView imageView;
@@ -164,8 +191,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         public CourseViewHolder(View itemView) {
             super(itemView);
-//            tv_doctor_name_name = itemView.findViewById(R.id.tv_doctor_name);
-//            tv_doctor_designation = itemView.findViewById(R.id.tv_doctor_designation);
+            tv_title1 = itemView.findViewById(R.id.tv_title1);
+            tv_title2 = itemView.findViewById(R.id.tv_title2);
+            tv_session = itemView.findViewById(R.id.tv_session);
+            tv_course = itemView.findViewById(R.id.tv_course);
+            tv_discipline = itemView.findViewById(R.id.tv_discipline);
+            tv_reg_num = itemView.findViewById(R.id.tv_reg_num);
+            tv_year = itemView.findViewById(R.id.tv_year);
+
 //            imageView = itemView.findViewById(R.id.imageView);
             cardview1 = itemView.findViewById(R.id.cardview1);
 
@@ -174,53 +207,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
 
 
-
-
-    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-    public void filter(CharSequence charText) {
-
-        List<String> filteredList = new ArrayList<>();
-        String charString = charText.toString();
-
-        if (charString.length() == 0) {
-////         memberListFiltered = dataSet;
-//         filteredList.addAll(dataSet);
-            Log.i("tag", String.valueOf("1:  "+charString.length())+dataSet);
-
-
-        }
-
-        if (charString.isEmpty() || charString.equalsIgnoreCase("")) {
-            memberListFiltered = dataSet2;
-        } else {
-//         List<MemberInfoModel.Result> filteredList = new ArrayList<>();
-            for (String row : dataSet2) {
-                if (
-                        row.toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getMobile().toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getYear().toLowerCase().contains(charString.toLowerCase())
-//                                ||
-//                                row.getMember_id_String().toLowerCase().contains(charString.toLowerCase())
-//                             ||
-//                             row.getTakaAmount().toLowerCase().contains(charString.toLowerCase()) ||
-//                             row.getPaymentStatus().toLowerCase().contains(charString.toLowerCase())
-                ) {
-                    filteredList.add(row);
-                }
-            }
-
-            Log.i("tag", "2:  "+String.valueOf(charString.length())+filteredList);
-
-            memberListFiltered = filteredList;
-        }
-
-//     Filter.FilterResults filterResults = new Filter.FilterResults();
-//     filterResults.values = memberListFiltered;
-        this.setData2(memberListFiltered, memberListFiltered, memberListFiltered);
-        this.notifyDataSetChanged();
-    }
 
 
 

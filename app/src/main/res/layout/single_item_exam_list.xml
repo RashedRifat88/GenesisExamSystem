@@ -137,10 +137,10 @@
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="0dp"
                                     android:layout_marginTop="0dp"
-                                    android:paddingLeft="10dp"
-                                    android:paddingRight="10dp"
                                     android:fontFamily="@font/roboto_bold"
                                     android:gravity="center"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp"
                                     android:src="@drawable/ic_tab"
                                     android:text="Start Exam"
                                     android:textColor="#df0061"
@@ -150,24 +150,24 @@
 
                             <LinearLayout
                                 android:id="@+id/linear_result_ans"
-                                android:visibility="visible"
                                 android:layout_width="wrap_content"
                                 android:layout_height="35dp"
                                 android:layout_gravity="center"
                                 android:background="@drawable/ic_key_with_rounded_bg"
                                 android:gravity="center"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:visibility="visible">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginLeft="36dp"
-                                    android:paddingLeft="8dp"
-                                    android:paddingRight="8dp"
                                     android:layout_marginTop="0dp"
                                     android:fontFamily="@font/roboto_bold"
                                     android:gravity="center"
+                                    android:paddingLeft="8dp"
+                                    android:paddingRight="8dp"
                                     android:src="@drawable/ic_tab"
                                     android:text="Result &amp; \nAnswer"
                                     android:textColor="@color/white"
@@ -212,6 +212,7 @@
                                 android:textSize="13sp" />
 
                             <TextView
+                                android:id="@+id/tv_exam_type"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -246,6 +247,7 @@
                                 android:textSize="13sp" />
 
                             <TextView
+                                android:id="@+id/tv_duration"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -279,6 +281,7 @@
                                 android:textSize="13sp" />
 
                             <TextView
+                                android:id="@+id/tv_total_mark"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -331,6 +334,7 @@
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/tv_mcq_mark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -364,6 +368,7 @@
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/tv_sba_mark"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -396,15 +401,93 @@
                         android:textColor="@color/white"
                         android:textSize="13sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:fontFamily="@font/roboto_regular"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:text="0.50"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="13sp" />-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/roboto_regular"
+                        android:layout_marginLeft="0dp"
                         android:gravity="center"
-                        android:text="0.50"
-                        android:textColor="@color/white"
-                        android:textSize="13sp" />
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="MCQ"
+                                android:textColor="@color/yellow_300"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tv_neg_mark_mcq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="0dp"
+                                android:fontFamily="@font/roboto_regular"
+                                android:gravity="center"
+                                android:text="0.50"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginLeft="4dp"
+                            android:background="#88FFFFFF" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="SBA"
+                                android:textColor="@color/yellow_300"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tv_neg_mark_sba"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="0dp"
+                                android:fontFamily="@font/roboto_regular"
+                                android:gravity="center"
+                                android:text="0.50"
+                                android:textColor="@color/white"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
 

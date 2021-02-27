@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -81,6 +82,13 @@ public class QuestionInOnePageAdapter2 extends RecyclerView.Adapter<QuestionInOn
         return position;
     }
 
+
+    @Override
+    public void onViewAttachedToWindow(@NonNull CorrectAnswerViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+
+//        recyclerView.requestFocus();
+    }
 
     @Override
     public CorrectAnswerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
