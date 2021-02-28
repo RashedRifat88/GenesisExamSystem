@@ -60,7 +60,7 @@ public class PreeQuestionActivity extends AppCompatActivity {
         cardView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PreeQuestionActivity.this, QuestionActivity.class);
+                Intent intent = new Intent(PreeQuestionActivity.this, SingleQuestionActivity.class);
                 intent.putExtra("from_where", "MAIN");
                 startActivity(intent);
             }

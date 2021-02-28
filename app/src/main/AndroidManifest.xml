@@ -18,8 +18,10 @@
         android:theme="@style/Theme.GenesisExamSystem"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,MissingClass">
-        <activity android:name=".question.PreeQuestionActivity"></activity>
-        <activity android:name=".question.QuestionInOnePageActivity"
+        <activity android:name=".question.SingleQuestionActivity"></activity>
+        <activity android:name=".question.PreeQuestionActivity" />
+        <activity
+            android:name=".question.QuestionInOnePageActivity"
             android:theme="@style/AppTheme.NoActionBarTheme" />
         <activity
             android:name=".credential.RegisterActivity"
@@ -37,7 +39,6 @@
         <activity android:name=".question.QuestionActivity" />
         <activity android:name=".exam.ExamActivity" />
         <activity android:name=".course.CourseActivity" />
-
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBarTheme">

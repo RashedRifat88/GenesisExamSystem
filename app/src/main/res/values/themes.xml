@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.GenesisExamSystem" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+<!--    <style name="Theme.GenesisExamSystem" parent="Theme.MaterialComponents.DayNight.DarkActionBar">-->
+    <style name="Theme.GenesisExamSystem" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="android:windowLightStatusBar">true</item>
+<!--        <item name="android:windowLightStatusBar">true</item>-->
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
