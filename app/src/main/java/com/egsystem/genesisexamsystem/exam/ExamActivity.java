@@ -9,8 +9,10 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.airbnb.lottie.LottieAnimationView;
 import com.egsystem.genesisexamsystem.R;
 import com.egsystem.genesisexamsystem.data.database.ExamDbHelper;
 import com.egsystem.genesisexamsystem.data.shared_pref.SharedData;
@@ -39,6 +41,7 @@ public class ExamActivity extends AppCompatActivity {
     private List<String> doctorList3;
     private static ExamAdapter examAdapter;
     private RecyclerView recyclerView;
+    private LottieAnimationView animationView;
 
     String course_id;
 
@@ -89,6 +92,7 @@ public class ExamActivity extends AppCompatActivity {
 
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
+        animationView = findViewById(R.id.animationView);
     }
 
 
@@ -128,6 +132,8 @@ public class ExamActivity extends AppCompatActivity {
 
 
                             if (response.isSuccessful()) {
+
+                                animationView.setVisibility(View.GONE);
 
                                 DoctorExamListModel examModel = response.body();
                                 Log.d("tag11111", " examModel: " + examModel);

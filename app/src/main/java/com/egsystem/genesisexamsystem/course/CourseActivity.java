@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.airbnb.lottie.LottieAnimationView;
 import com.egsystem.genesisexamsystem.HomeActivity;
 import com.egsystem.genesisexamsystem.R;
 import com.egsystem.genesisexamsystem.course.adapter.CourseAdapter;
@@ -55,6 +56,7 @@ public class CourseActivity extends AppCompatActivity {
     private List<String> doctorList3;
     private static CourseAdapter courseAdapterAdapter;
     private RecyclerView  recyclerView;
+    private LottieAnimationView animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,7 @@ public class CourseActivity extends AppCompatActivity {
 
     private void initComponents() {
         recyclerView = findViewById(R.id.recyclerView);
+        animationView = findViewById(R.id.animationView);
     }
 
 
@@ -150,6 +153,8 @@ public class CourseActivity extends AppCompatActivity {
 
 
                             if (response.isSuccessful()) {
+
+                                animationView.setVisibility(View.GONE);
 
                                 DoctorCourseModel courseodel = response.body();
                                 Log.d("tag11111", " courseodel: " + courseodel);

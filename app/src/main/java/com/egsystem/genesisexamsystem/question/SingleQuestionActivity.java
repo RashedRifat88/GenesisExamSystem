@@ -223,8 +223,8 @@ public class SingleQuestionActivity extends AppCompatActivity {
             questionCountTotal = questionList.size();
 //            Collections.shuffle(questionList);
             Log.d("questionList", "questionList: " + questionList);
-//            showNextQuestion("initial");
-            showInitialQuestion();
+            showNextQuestion("initial");
+//            showInitialQuestion();
 
 //            questionCounter = 1;
             for (int i = 0; i < questionList.size(); i++) {
@@ -583,7 +583,8 @@ public class SingleQuestionActivity extends AppCompatActivity {
 //                currentQuestion = questionList.get(questionCounterExtra);
 //            }
 
-            currentQuestion = questionList.get(questionCounterExtra);
+//            currentQuestion = questionList.get(questionCounterExtra);
+            currentQuestion = questionList.get(questionCounter);
 
             tv_question.setText(currentQuestion.getQuestion());
 
@@ -628,6 +629,8 @@ public class SingleQuestionActivity extends AppCompatActivity {
 
 
             //insert user ans into bd
+
+            currentQuestion = questionList.get(questionCounterExtra);
             String questionId = currentQuestion.getQuestionId();
             String questionSl = String.valueOf(questionCounter);
             String questionType = currentQuestion.getQuestionType();
@@ -744,9 +747,18 @@ public class SingleQuestionActivity extends AppCompatActivity {
             Log.d("answerList", "ansCountTotal p: " + dbHelper.getAllGivenAnswers().size());
 
 
-            questionCounter++;
-            questionCounterExtra++;
-            tv_questionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
+            if (calling_status.equalsIgnoreCase("initial")) {
+                questionCounter++;
+                tv_questionCount.setText("Question: " + (questionCounter) + "/" + questionCountTotal);
+            }else {
+                questionCounter++;
+                questionCounterExtra++;
+
+                tv_questionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
+            }
+
+
+
             answered = false;
             tv_next.setText("Next");
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
@@ -1049,17 +1061,37 @@ public class SingleQuestionActivity extends AppCompatActivity {
             }
 
 
-            Log.d("tagResult", "questionId:" + questionId);
-            Log.d("tagResult", "questionSl:" + questionSl);
-            Log.d("tagResult", "questionType:" + questionType);
-            Log.d("tagResult", "correct_ans_sba:" + correct_ans_sba);
-            Log.d("tagResult", "correct_ans_a:" + correct_ans_a);
-            Log.d("tagResult", "correct_ans_b:" + correct_ans_b);
-            Log.d("tagResult", "correct_ans_c:" + correct_ans_c);
-            Log.d("tagResult", "correct_ans_d:" + correct_ans_d);
-            Log.d("tagResult", "correct_ans_e:" + correct_ans_e);
+            Log.d("tagResultSkipped", "questionId:" + questionId);
+            Log.d("tagResultSkipped", "questionSl:" + questionSl);
+            Log.d("tagResultSkipped", "questionType:" + questionType);
+            Log.d("tagResultSkipped", "correct_ans_sba:" + correct_ans_sba);
+            Log.d("tagResultSkipped", "correct_ans_a:" + correct_ans_a);
+            Log.d("tagResultSkipped", "correct_ans_b:" + correct_ans_b);
+            Log.d("tagResultSkipped", "correct_ans_c:" + correct_ans_c);
+            Log.d("tagResultSkipped", "correct_ans_d:" + correct_ans_d);
+            Log.d("tagResultSkipped", "correct_ans_e:" + correct_ans_e);
 
-            if (stepCount < 50) {
+
+//            if (calling_status2.equalsIgnoreCase("skipped")) {
+//
+////                    removeAnswer(String question_id1);
+//                String skipped = "yes";
+//                String not_answered = "";
+////                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
+////                    dbHelper.addAnswer(ans1);
+//
+//                dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
+//
+//            } else {
+//                String skipped = "no";
+//                String not_answered = "";
+////                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
+////                    dbHelper.addAnswer(ans1);
+//                dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
+////                    dbHelper.removeSkippedSpecificAnswer(questionId);
+//            }
+
+            if (stepCount > 50) {
                 if (calling_status2.equalsIgnoreCase("skipped")) {
 
 //                    removeAnswer(String question_id1);
@@ -1081,6 +1113,9 @@ public class SingleQuestionActivity extends AppCompatActivity {
             }
 
             stepCount++;
+
+
+
 
 //            removeSkippedItem,updateAnswerItem
 
