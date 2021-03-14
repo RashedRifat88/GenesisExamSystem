@@ -140,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="questions in single page"
+                            android:text="question in single page"
                             android:textColor="#262626"
                             android:textSize="12sp" />
 

@@ -88,16 +88,15 @@
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginLeft="16dp"
+                            android:layout_marginRight="12dp"
                             android:gravity="center"
                             android:orientation="horizontal">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="16dp"
-                                android:layout_toRightOf="@+id/iv_timer"
+                                android:layout_marginRight="2dp"
                                 android:fontFamily="@font/roboto_bold"
-                                android:freezesText="true"
                                 android:gravity="center"
                                 android:text="Your\nAns"
                                 android:textColor="@android:color/white"
@@ -106,12 +105,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="16dp"
-                                android:layout_toRightOf="@+id/iv_timer"
+                                android:layout_marginRight="1dp"
+                                android:paddingRight="0dp"
                                 android:fontFamily="@font/roboto_bold"
-                                android:freezesText="true"
                                 android:gravity="center"
-                                android:text="Correct \nAns"
+                                android:layout_gravity="center"
+                                android:text="Correct Ans"
                                 android:textColor="@android:color/white"
                                 android:textSize="10sp" />
 

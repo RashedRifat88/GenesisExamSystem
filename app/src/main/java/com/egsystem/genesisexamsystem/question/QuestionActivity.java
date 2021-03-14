@@ -941,7 +941,7 @@ public class QuestionActivity extends AppCompatActivity {
             Log.d("tag0909", "skipped_ques_sl: " + skipped_ques_sl);
             Log.d("tag0909", "skipped_ques_id: " + skipped_ques_id);
 
-            currentQuestion = dbHelper.getSpecificQueation(skipped_ques_id);
+            currentQuestion = dbHelper.getSpecificQuestion(skipped_ques_id);
 
 
             ///
@@ -1062,25 +1062,27 @@ public class QuestionActivity extends AppCompatActivity {
             Log.d("tagResult", "correct_ans_d:" + correct_ans_d);
             Log.d("tagResult", "correct_ans_e:" + correct_ans_e);
 
+
+
             if (stepCount < 50) {
                 if (calling_status2.equalsIgnoreCase("skipped")) {
 
 //                    removeAnswer(String question_id1);
                     String skipped = "yes";
                     String not_answered = "";
-//                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
-//                    dbHelper.addAnswer(ans1);
-
                     dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
 
                 } else {
                     String skipped = "no";
                     String not_answered = "";
-//                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
-//                    dbHelper.addAnswer(ans1);
                     dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
 //                    dbHelper.removeSkippedSpecificAnswer(questionId);
                 }
+            }else {
+                Log.d("tag0909", "stepCount from else:" + stepCount);
+                String skipped = "no";
+                String not_answered = "";
+                dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
             }
 
             stepCount++;

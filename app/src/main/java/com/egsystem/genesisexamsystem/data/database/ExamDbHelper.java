@@ -397,7 +397,20 @@ public class ExamDbHelper extends SQLiteOpenHelper {
     }
 
 
-    public Question getSpecificQueation(String question_id1) {
+//    public ArrayList<Answer> deleteSpecificSkippedQuestionsAnswers() {
+//        ArrayList<Answer> answerList = new ArrayList<>();
+//        db = getReadableDatabase();
+//
+//        Cursor c = db.rawQuery("SELECT * FROM " + AnswersTable.TABLE_ANSWERS + " WHERE skipped=?", new String[]{"yes"});
+//
+//
+//
+//        c.close();
+//        return answerList;
+//    }
+
+
+    public Question getSpecificQuestion(String question_id1) {
         db = getReadableDatabase();
 
         Cursor c = db.rawQuery("SELECT * FROM " + QuestionsTable.TABLE_QUESTIONS + " WHERE question_id=?", new String[]{question_id1});

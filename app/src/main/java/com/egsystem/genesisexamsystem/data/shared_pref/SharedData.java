@@ -12,6 +12,8 @@ public class SharedData {
     public static final String USER_NAME = "user_name";
     public static final String BMDC_NO = "bmdc_no";
 
+    public static final String SKIPPED_QUES_ID_STORED = "skipped_ques_id_stored";
+
 
     public static void saveTOKEN(Context context, String value) {
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
@@ -60,6 +62,21 @@ public class SharedData {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPreferences.getString(BMDC_NO, null);
     }
+
+
+
+    public static void saveSKIPPED_QUES_ID_STORED(Context context, String value) {
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+        editor.putString(SKIPPED_QUES_ID_STORED, value);
+        editor.commit();
+    }
+
+    public static String getSKIPPED_QUES_ID_STORED(Context context) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPreferences.getString(SKIPPED_QUES_ID_STORED, "0");
+    }
+
+
 
 
 

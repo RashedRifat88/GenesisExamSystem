@@ -466,6 +466,7 @@ public class QuestionInOnePageAdapter2 extends RecyclerView.Adapter<QuestionInOn
                 tv_save.setBackgroundResource(R.drawable.rounded_corner2);
 
                 QuestionInOnePageActivity.loadAnswerList();
+                QuestionInOnePageActivity.scrollNextPosition((position+1));
 
             }
         });

@@ -1,4 +1,4 @@
-package com.egsystem.genesisexamsystem.question;
+  package com.egsystem.genesisexamsystem.question;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.egsystem.genesisexamsystem.Result.ResultActivity;
 import com.egsystem.genesisexamsystem.data.database.ExamDbHelper;
 import com.egsystem.genesisexamsystem.data.model.Answer;
 import com.egsystem.genesisexamsystem.data.model.Question;
+import com.egsystem.genesisexamsystem.data.shared_pref.SharedData;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -295,9 +297,15 @@ public class SingleQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                answered = false;
+//                answered = false;
 //                addSkippedQues();
                 showNextQuestion("skipped");
+
+                if (answered) {
+                    Toast.makeText(SingleQuestionActivity.this, "Can not be skipped, you have already given answer.", Toast.LENGTH_SHORT).show();
+//                    answered = true;
+
+                }
 
 //                if (answered) {
 //                    Toast.makeText(SingleQuestionActivity.this, "Can not be skipped, you have already given answer.", Toast.LENGTH_SHORT).show();
@@ -391,7 +399,6 @@ public class SingleQuestionActivity extends AppCompatActivity {
             }
         });
         //
-
 
         //
         radio_group_multiple_choice1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -940,17 +947,19 @@ public class SingleQuestionActivity extends AppCompatActivity {
             finishExam();
         } else {
 
+            String skipped_ques_id_stored = SharedData.getSKIPPED_QUES_ID_STORED(this);
 
             int size_s = skippedAnswerList.size();
-            int size_n = size_s - 1;
+            int size_n = size_s - size_s;
             String skipped_ques_sl = skippedAnswerList.get(size_n).getQuestionSl();
             String skipped_ques_id = skippedAnswerList.get(size_n).getQuestionId();
+            SharedData.saveSKIPPED_QUES_ID_STORED(this, skipped_ques_id);
 
             Log.d("tag0909", "skippedAnswerList.size(): " + skippedAnswerList.size());
             Log.d("tag0909", "skipped_ques_sl: " + skipped_ques_sl);
             Log.d("tag0909", "skipped_ques_id: " + skipped_ques_id);
 
-            currentQuestion = dbHelper.getSpecificQueation(skipped_ques_id);
+            currentQuestion = dbHelper.getSpecificQuestion(skipped_ques_id);
 
 
             ///
@@ -1001,6 +1010,9 @@ public class SingleQuestionActivity extends AppCompatActivity {
             }
             ///
 
+
+
+            currentQuestion = dbHelper.getSpecificQuestion(skipped_ques_id_stored);
 
             //insert user ans into bd
             String questionId = currentQuestion.getQuestionId();
@@ -1097,19 +1109,18 @@ public class SingleQuestionActivity extends AppCompatActivity {
 //                    removeAnswer(String question_id1);
                     String skipped = "yes";
                     String not_answered = "";
-//                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
-//                    dbHelper.addAnswer(ans1);
-
                     dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
 
                 } else {
                     String skipped = "no";
                     String not_answered = "";
-//                    Answer ans1 = new Answer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
-//                    dbHelper.addAnswer(ans1);
                     dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
 //                    dbHelper.removeSkippedSpecificAnswer(questionId);
                 }
+            }else {
+                String skipped = "no";
+                String not_answered = "";
+                dbHelper.updateSpecificAnswer(questionId, questionSl, questionType, correct_ans_sba, correct_ans_a, correct_ans_b, correct_ans_c, correct_ans_d, correct_ans_e, skipped, not_answered);
             }
 
             stepCount++;

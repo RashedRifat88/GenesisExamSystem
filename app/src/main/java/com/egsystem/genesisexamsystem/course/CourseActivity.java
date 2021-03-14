@@ -74,7 +74,6 @@ public class CourseActivity extends AppCompatActivity {
         deleteAnswerData();
 
         coursesApiCall();
-
     }
 
     private void deleteAnswerData() {

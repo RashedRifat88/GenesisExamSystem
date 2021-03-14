@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -27,6 +30,7 @@ import com.egsystem.genesisexamsystem.question.adapter.UnAnsweredAnsAdapter;
 import com.egsystem.genesisexamsystem.utils.LinearLayoutManagerWithSmoothScroller;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class QuestionInOnePageActivity extends AppCompatActivity {
 
@@ -45,6 +49,12 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
     static RecyclerView.LayoutManager  mLayoutManager;
     static RecyclerView.SmoothScroller smoothScroller;
 
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMillis;
+    private TextView text_view_countdown;
+    private ColorStateList textColorDefaultCd;
+    private static final long COUNTDOWN_IN_MILLIS = 400000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +69,9 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
 
         loadListData();
         loadRecyclerView();
+
+        timeLeftInMillis = COUNTDOWN_IN_MILLIS;
+        startCountDown();
     }
 
 
@@ -104,12 +117,10 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
                 unAnsweredAnsAdapter.setData2(unansweredAnswerList);
                 unAnsweredAnsAdapter.notifyDataSetChanged();
 
-
                 alertDialogQuestion = builder.create();
                 alertDialogQuestion.show();
                 alertDialogQuestion.setCancelable(true);
                 alertDialogQuestion.setCanceledOnTouchOutside(true);
-
             }
         });
 
@@ -130,51 +141,23 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
 
         alertDialogQuestion.dismiss();
 
-//        recyclerView.scrollToPosition(position);
-//        recyclerView.requestFocus();
-
-        recyclerView.smoothScrollToPosition(position);
-
-
-
+        recyclerView.smoothScrollToPosition(position-1);
 
 //        recyclerView.smoothScrollToPosition(position-1);
 //        recyclerView.requestFocus();
-        Log.d("tagResponse3333", " position: " + position);
+        Log.d("tagResponse3333", " position-1: " + (position-1));
 
 //        mLayoutManager.scrollToPosition(position-1);
 //        recyclerView.requestFocus();
 
-
 //        mLayoutManager.scrollToPositionWithOffset(index, top);
+    }
 
 
+    public static void scrollNextPosition(int position) {
 
-//        if (mLayoutManager instanceof LinearLayoutManager) {
-//            // Scroll to item and make it the first visible item of the list.
-//            ((LinearLayoutManager) mLayoutManager).scrollToPositionWithOffset(position, 0);
-//        } else {
-//            recyclerView.smoothScrollToPosition(position);
-//        }
-
-
-//        recyclerView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                recyclerView.scrollToPosition(questionInOnePageAdapter2.getItemCount() - 1);
-//                // Here adapter.getItemCount()== child count
-//            }
-//        });
-
-//        recyclerView.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-////                recyclerView.scrollToPosition(questionInOnePageAdapter2.getItemCount() - 1);
-//                recyclerView.smoothScrollToPosition(1);
-//                // Here adapter.getItemCount()== child count
-//            }
-//        }, 1000);
-
+        recyclerView.smoothScrollToPosition(position);
+        Log.d("tagResponse3333", " position-1: " + (position-1));
     }
 
 
@@ -184,7 +167,10 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
+
         recyclerView = findViewById(R.id.recyclerView);
+        text_view_countdown = findViewById(R.id.text_view_countdown);
+        textColorDefaultCd = text_view_countdown.getTextColors();
         tv_submit = findViewById(R.id.tv_submit);
 
         tv_submit.setOnClickListener(new View.OnClickListener() {
@@ -209,8 +195,44 @@ public class QuestionInOnePageActivity extends AppCompatActivity {
         questionInOnePageAdapter2.setData2(questionList);
         questionInOnePageAdapter2.notifyDataSetChanged();
 
+//        recyclerView.smoothScrollToPosition(3);
+
 
     }
+
+
+
+    private void startCountDown() {
+
+        countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeftInMillis = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                timeLeftInMillis = 0;
+                updateCountDownText();
+//                checkAnswer();
+            }
+        }.start();
+    }
+
+    private void updateCountDownText() {
+        int hours = (int) (timeLeftInMillis / 1000) / 3600;
+        int minutes = (int) (timeLeftInMillis / 1000) / 60;
+        int seconds = (int) (timeLeftInMillis / 1000) % 60;
+        String timeFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
+        text_view_countdown.setText(timeFormatted);
+        if (timeLeftInMillis < 10000) {
+            text_view_countdown.setTextColor(Color.RED);
+        } else {
+            text_view_countdown.setTextColor(textColorDefaultCd);
+        }
+    }
+
 
 
     @Override
