@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.egsystem.genesisexamsystem">
+    package="com.genesis.genesisexamsystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -18,29 +18,29 @@
         android:theme="@style/Theme.GenesisExamSystem"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning,MissingClass">
-        <activity android:name=".question.SingleQuestionActivity"></activity>
-        <activity android:name=".question.PreeQuestionActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.question.SingleQuestionActivity"></activity>
+        <activity android:name="com.genesis.genesisexamsystem.question.PreeQuestionActivity" />
         <activity
-            android:name=".question.QuestionInOnePageActivity"
+            android:name="com.genesis.genesisexamsystem.question.QuestionInOnePageActivity"
             android:theme="@style/AppTheme.NoActionBarTheme" />
         <activity
-            android:name=".credential.RegisterActivity"
+            android:name="com.genesis.genesisexamsystem.credential.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBarTheme" />
         <activity
-            android:name=".credential.LoginActivity"
+            android:name="com.genesis.genesisexamsystem.credential.LoginActivity"
             android:theme="@style/AppTheme.NoActionBarTheme" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.genesis.genesisexamsystem.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBarTheme" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".answer.CorrectAnswerActivity" />
-        <activity android:name=".Result.ResultActivity" />
-        <activity android:name=".question.QuestionActivity" />
-        <activity android:name=".exam.ExamActivity" />
-        <activity android:name=".course.CourseActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.MainActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.answer.CorrectAnswerActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.Result.ResultActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.question.QuestionActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.exam.ExamActivity" />
+        <activity android:name="com.genesis.genesisexamsystem.course.CourseActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.genesis.genesisexamsystem.SplashActivity"
             android:theme="@style/AppTheme.NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

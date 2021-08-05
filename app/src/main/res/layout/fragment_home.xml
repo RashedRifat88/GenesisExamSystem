@@ -13,12 +13,13 @@
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        tools:ignore="MissingConstraints" />-->
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ghghg"
-        />
+<!--    <TextView-->
+<!--        android:visibility="visible"-->
+<!--        android:id="@+id/text1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ghghg"-->
+<!--        />-->
 
     //Actionbar starts
 

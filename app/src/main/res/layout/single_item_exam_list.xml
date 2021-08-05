@@ -94,16 +94,20 @@
 
 
                             <TextView
+                                android:id="@+id/tv_name1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="Anesthesia"
                                 android:textColor="@color/white"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                             <TextView
+                                android:visibility="gone"
+                                android:id="@+id/tv_name2"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="10dp"
                                 android:layout_marginBottom="8dp"
                                 android:fontFamily="@font/roboto_bold"
                                 android:text="FCPS Part-2 Final"
